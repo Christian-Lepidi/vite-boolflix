@@ -36,8 +36,18 @@ export default {
     Search
   </button>
   <ul v-for="movie in movies">
-    <li>{{ movie.original_title }}</li>
+    <li>
+      <span class="info">Original title:</span> {{ movie.original_title }}
+      <span class="info">Title:</span> {{ movie.title }}
+      <span class="info">Language:</span>
+      {{ movie.original_language }} <span class="info">Vote average:</span>
+      {{ movie.vote_average }}
+    </li>
   </ul>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.info {
+  color: rgb(213, 31, 31);
+}
+</style>
