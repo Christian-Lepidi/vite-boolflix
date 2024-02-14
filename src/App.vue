@@ -57,7 +57,7 @@ export default {
 }
 
 .flag {
-  width: 20px;
-  height: 15px;
+  width: 21px;
+  height: 1remx;
 }
 </style>
