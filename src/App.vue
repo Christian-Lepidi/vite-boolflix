@@ -1,9 +1,11 @@
 <script>
 import axios from "axios";
+import store from "./store/index";
 
 export default {
   data() {
     return {
+      store,
       text: "",
       movies: [],
     };
@@ -25,16 +27,18 @@ export default {
 </script>
 
 <template>
-  <input
-    v-model="text"
-    class="form-control me-2"
-    type="search"
-    placeholder="Search"
-    aria-label="Search"
-  />
-  <button class="btn btn-outline-success" type="submit" @click="search()">
-    Search
-  </button>
+  <div class="d-flex">
+    <input
+      v-model="text"
+      class="form-control me-2"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    <button class="btn btn-outline-success" type="submit" @click="search()">
+      Search
+    </button>
+  </div>
   <ul v-for="movie in movies">
     <li>
       <span class="info">Original title:</span> {{ movie.original_title }}
@@ -51,7 +55,9 @@ export default {
   </ul>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@use "./components/general.scss";
+
 .info {
   color: rgb(242, 161, 11);
 }
