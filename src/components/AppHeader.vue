@@ -7,7 +7,7 @@ export default {
       store,
     };
   },
-  emits: ["search", "searchTv"],
+  emits: ["search"],
 };
 </script>
 
@@ -20,11 +20,7 @@ export default {
       placeholder="Search"
       aria-label="Search"
     />
-    <button
-      type="button"
-      class="btn btn-danger"
-      @click="$emit('search', 'searchTv')"
-    >
+    <button type="button" class="btn btn-danger" @click="$emit('search')">
       Search
     </button>
   </div>

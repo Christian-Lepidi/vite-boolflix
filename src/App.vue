@@ -22,8 +22,6 @@ export default {
           store.movies = resp.data.results;
           console.log(store.movies);
         });
-    },
-    searchTv() {
       axios
         .get(
           `https://api.themoviedb.org/3/search/tv?api_key=${store.apiKey}&language=it-IT&query=${store.text}`
@@ -38,7 +36,7 @@ export default {
 </script>
 
 <template>
-  <app-header @search="search, searchTv"></app-header>
+  <app-header @search="search"></app-header>
   <app-main></app-main>
 </template>
 
