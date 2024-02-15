@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <ul v-for="movie in movies">
+  <ul v-for="movie in store.movies">
     <li>
       <span class="info">Original title:</span> {{ movie.original_title }}
       <span class="info">Title:</span> {{ movie.title }}
@@ -23,6 +23,20 @@ export default {
       />
       <span class="info">Vote average:</span>
       {{ movie.vote_average }}
+    </li>
+  </ul>
+  <ul v-for="serie in tvSeries">
+    <li>
+      <span class="info">Original title:</span> {{ serie.original_title }}
+      <span class="info">Title:</span> {{ serie.title }}
+      <span class="info">Language:</span>
+      {{ serie.original_language
+      }}<img
+        class="flag"
+        :src="`/public/flag/${serie.original_language}-flag.jpg`"
+      />
+      <span class="info">Vote average:</span>
+      {{ serie.vote_average }}
     </li>
   </ul>
 </template>
