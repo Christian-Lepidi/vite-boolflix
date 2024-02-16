@@ -37,11 +37,16 @@ export default {
 </script>
 
 <template>
-  <app-header @search="search"></app-header>
-  <app-main></app-main>
-  <app-card></app-card>
+  <main>
+    <app-header @search="search"></app-header>
+    <app-main></app-main>
+    <app-card></app-card>
+  </main>
 </template>
 
 <style lang="scss">
 @use "./components/general.scss";
+template {
+  overflow: hidden;
+}
 </style>

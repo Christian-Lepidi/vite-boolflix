@@ -39,7 +39,7 @@ export default {
             :src="`/public/flag/${serie.original_language}-flag.jpg`"
           />
         </div>
-        <div>Vote average: Math.ceil({{ serie.vote_average }} / 2)</div>
+        <div>Vote average: {{ serie.vote_average }}</div>
       </div>
       <img
         class="poster front-image"
