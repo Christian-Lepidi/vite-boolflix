@@ -40,6 +40,9 @@ header {
   width: 100%;
   height: 90px;
   background-color: rgb(23, 22, 22);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .title-box {

@@ -1,45 +1,48 @@
 <script>
 export default {
-  props: { movie: Object },
+  props: { movie: Object, serie: Object },
 };
 </script>
 
 <template>
-  <ul class="box">
+  <ul class="box" v-if="movie">
     <li>
-      <span class="info">Original title:</span> {{ movie.original_title }}
-      <span class="info">Title:</span> {{ movie.title }}
-      <span class="info">Language:</span>
-      {{ movie.original_language
-      }}<img
-        class="flag"
-        :src="`/public/flag/${movie.original_language}-flag.jpg`"
-      />
-      <span class="info">Vote average:</span>
-      {{ movie.vote_average }}
+      <div class="info">Original title: {{ movie.original_title }}</div>
+      <div class="info">Title: {{ movie.title }}</div>
+      <div class="info">
+        Language: {{ movie.original_language }}
+        <img
+          class="flag"
+          :src="`/public/flag/${movie.original_language}-flag.jpg`"
+        />
+      </div>
+      <div class="info">Vote average: {{ movie.vote_average }}</div>
     </li>
   </ul>
-  <ul class="box">
+
+  <ul class="box" v-if="serie">
     <li>
-      <span class="info">Original title:</span> {{ serie.original_name }}
-      <span class="info">Title:</span> {{ serie.name }}
-      <span class="info">Language:</span>
-      {{ serie.original_language
-      }}<img
-        class="flag"
-        :src="`/public/flag/${serie.original_language}-flag.jpg`"
-      />
-      <span class="info">Vote average:</span>
-      {{ serie.vote_average }}
+      <div class="info">Original title: {{ serie.original_name }}</div>
+      <div class="info">Title: {{ serie.name }}</div>
+      <div class="info">
+        Language: {{ serie.original_language }}
+        <img
+          class="flag"
+          :src="`/public/flag/${serie.original_language}-flag.jpg`"
+        />
+      </div>
+      <div class="info">Vote average: {{ serie.vote_average }}</div>
     </li>
   </ul>
 </template>
 
 <style lang="scss" scoped>
 .box {
-  width: 140px;
-  height: 170px;
+  max-width: 220px;
+  height: 250px;
   background-color: aquamarine;
+  list-style-type: none;
+  text-align: center;
 }
 
 .flag {

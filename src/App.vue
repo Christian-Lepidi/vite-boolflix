@@ -3,6 +3,7 @@ import axios from "axios";
 import { store } from "./store/";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
+import AppCard from "./components/AppCard.vue";
 
 export default {
   data() {
@@ -10,7 +11,7 @@ export default {
       store,
     };
   },
-  components: { AppHeader, AppMain },
+  components: { AppHeader, AppMain, AppCard },
 
   methods: {
     search() {
@@ -38,6 +39,7 @@ export default {
 <template>
   <app-header @search="search"></app-header>
   <app-main></app-main>
+  <app-card></app-card>
 </template>
 
 <style lang="scss">

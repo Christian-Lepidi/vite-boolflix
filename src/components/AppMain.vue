@@ -12,15 +12,25 @@ export default {
 </script>
 
 <template>
-  <h2>Movies</h2>
-  <AppCard v-for="movie in store.movies" :movie="movie" />
-  <AppCard v-for="serie in store.tvSeries" :serie="serie" />
+  <h2 class="text-center">Movies</h2>
+  <div class="card-container">
+    <AppCard v-for="movie in store.movies" :movie="movie" />
+  </div>
 
-  <h2>Series</h2>
+  <h2 class="text-center">Series</h2>
+  <div class="card-container">
+    <AppCard v-for="serie in store.tvSeries" :serie="serie" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .info {
   color: rgb(242, 161, 11);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 </style>
