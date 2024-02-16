@@ -17,17 +17,13 @@ export default {
     <AppCard v-for="movie in store.movies" :movie="movie" />
   </div>
 
-  <h2 class="text-center">Series</h2>
+  <h2 class="text-center mt-3">Series</h2>
   <div class="card-container">
     <AppCard v-for="serie in store.tvSeries" :serie="serie" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.info {
-  color: rgb(242, 161, 11);
-}
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
